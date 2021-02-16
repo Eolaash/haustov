@@ -2,6 +2,7 @@ package haustov
 
 import "fmt"
 
-func testTask() {
+// TestTask for export test
+func TestTask() {
 	fmt.Println("HELLO!")
 }
