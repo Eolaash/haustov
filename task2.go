@@ -12,6 +12,7 @@ func SolutionBinaryGap(N int) int {
 
 	// Main scanner
 	for tIndex := range tBinaryString {
+		fmt.Print("IDX=", tIndex, tBinaryString[tIndex])
 		if tBinaryString[tIndex] == 0 {
 			tCurrentStray++
 		} else {
