@@ -14,11 +14,11 @@ func SolutionBinaryGap(N int) int {
 	for tIndex := range tBinaryString {
 		if tBinaryString[tIndex] == 48 {
 			tCurrentStray++
-			fmt.Print(tCurrentStray, " ")
+			fmt.Print(tBinaryString[tIndex], "-", tCurrentStray, " ")
 		} else {
 			tMaxStray = tCurrentStray
 			tCurrentStray = 0
-			fmt.Print(tCurrentStray, " ")
+			fmt.Print(tBinaryString[tIndex], "-", tCurrentStray, " ")
 		}
 	}
 
