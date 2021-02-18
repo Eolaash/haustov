@@ -8,8 +8,8 @@ package haustov
 func SolutionUniq(A []int) int {
 
 	// Preventer
-	if len(A) == 0 {
-		return 0
+	if len(A) < 2 {
+		return len(A)
 	}
 
 	// HashTable for uniq counting
