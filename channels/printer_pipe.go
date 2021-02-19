@@ -17,11 +17,11 @@ func PrinterPipe(input ResultsChannel) {
 	wg.Add(1)
 
 	go func() {
+		defer wg.Done()
 		for x := range input {
 			fmt.Println("=== print result ", x)
 			time.Sleep(time.Second)
 		}
-		wg.Done()
 		//ch <- struct{}{}
 	}()
 
