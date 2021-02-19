@@ -21,7 +21,8 @@ func postReply(w http.ResponseWriter, req *http.Request) {
 
 	// Only POST filter
 	if req.Method != "POST" {
-		fmt.Fprintf(w, "Sorry, only POST method supported")
+		http.Error(w, "Sorry, only POST methods are supported", 404)
+		//fmt.Fprintf(w, "Sorry, only POST method supported")
 		return
 	}
 
