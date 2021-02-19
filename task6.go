@@ -13,7 +13,8 @@ const VectorLength = 5
 func DeadLockTask() {
 	inputChannel := channels.GenerateInts(VectorLength)
 	resultsChannel := channels.ComputeSquare(inputChannel)
-	final := channels.PrinterPipe(resultsChannel)
+	//final := channels.PrinterPipe(resultsChannel)
+	channels.PrinterPipe(resultsChannel)
 	fmt.Println("Over")
-	<-final
+	//<-final
 }

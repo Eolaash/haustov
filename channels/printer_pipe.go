@@ -2,24 +2,29 @@ package channels
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
 // FinalChannel -
-type FinalChannel chan struct{}
+//type FinalChannel chan struct{}
 
 // PrinterPipe -pipe for print
-func PrinterPipe(input ResultsChannel) FinalChannel {
-	ch := make(FinalChannel)
+func PrinterPipe(input ResultsChannel) {
+	//ch := make(FinalChannel)
+	var wg sync.WaitGroup
+
+	wg.Add(1)
 
 	go func() {
 		for x := range input {
 			fmt.Println("=== print result ", x)
 			time.Sleep(time.Second)
 		}
-
-		ch <- struct{}{}
+		wg.Done()
+		//ch <- struct{}{}
 	}()
 
-	return ch
+	wg.Wait()
+	//return ch
 }
