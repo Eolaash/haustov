@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-// headers - func to show headers in console
+// headers - func to show headers
 func headers(w http.ResponseWriter, req *http.Request) {
 	for name, values := range req.Header {
 		// coz we can have multivalues for single header - []string map to parse
@@ -46,7 +46,7 @@ func StartHTTPServer() {
 	// SERVER default ADDR
 	fServerAddr := ":8882"
 
-	// headers enlist to console
+	// headers enlist as reply
 	http.HandleFunc("/headers", headers)
 
 	// task5 main func - POST echo to reply
